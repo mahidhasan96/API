@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+</head>
+<body>
+    <!-- <h1>json </h1>
+    <h1>javasctipt object notation</h1>
+    <script>
+      const user = {
+          id: 522194,
+          nane: " mahid hasan", 
+          frindAge:[20,51,41,53,77],
+          firnd: ["mahid","jaamal","tolal"],
+          };
+     // {"nane":" mahid hasan","id":522194}
+      const userjson = JSON.stringify(user);
+      const userFormJson = JSON.parse(userjson);
+      console.log(userjson);
+      console.log(userFormJson);
+    </script> -->
+    <ul id="users-container">
+
+    </ul>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(json => displayUsers(json))
+      
+        function displayUsers(users){
+            const userNames = users.map(user => user.username);
+            const ul = document.getElementById("users-container");
+            for(i = 0; i < userNames.length; i++){
+                const username = userNames[i];
+                const li = document.createElement("li");
+                li.innerText = username
+                ul.appendChild(li);
+            }
+        
+        }
+    </script>
+</body>
+</html>
