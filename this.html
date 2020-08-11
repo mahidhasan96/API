@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="this.innerText = 'this is confuse me for your misbehaivero'" >this is not confuse anymore</h1>
+    <script>
+        const myObj = {
+            Name: "amnmaa",
+            getFullName: function(){
+                console.log(this)
+                return 'mr' + this.name;
+            }
+        }
+        //myObj.getFullName();
+        const anatherObj = {
+            name: "arman ali",
+        }
+        // anatherObj.getFullName = myObj.getFullName;
+        // console.log(anatherObj.getFullName);
+        // myObj.getFullName();
+        // anatherObj.getFullName();
+        // function add(a, b){
+        //     console.log(this);
+        //     return a + b;
+
+        // }
+        // add(100,300);
+        // anatherObj.sum = add;
+        // anatherObj.sum();
+
+        setTimeOut(function(){
+            console.log(this);
+        },100)
+    </script>
+</body>
+</html>
